@@ -128,9 +128,11 @@ const App = () => {
     const username = result.value;
     setPlayerName(username);
 
-    const newSocket = io("http://localhost:3000", {
+    const newSocket = io("http://34.201.73.65:3000", {
       autoConnect: true,
     });
+
+//    Console.log(process.env.REACT_APP_SOCKET_URL)
 
     newSocket?.emit("request_to_play", {
       playerName: username,

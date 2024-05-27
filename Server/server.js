@@ -3,8 +3,16 @@ const { Server } = require("socket.io");
 
 const httpServer = createServer();
 const io = new Server(httpServer, {
-  cors: "http://localhost:5174/",
+  cors: "http://34.201.73.65:5174/",
 });
+
+// console.log(process.env.CORS_ORIGIN);
+// const httpServer = http.createServer();
+// const io = new Server(httpServer, {
+//   cors: {
+//     origin: process.env.CORS_ORIGIN
+//   }
+// });
 
 const allUsers = {};
 const allRooms = [];
